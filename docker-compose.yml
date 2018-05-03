@@ -2,8 +2,8 @@ version: '2.2'
 
 services:
     pwn:
-        build: ./
-        image: sixstars/pwn
+        build: .
+        image: pwn-xinetd
         volumes: 
             - ./share:/home/pwn:ro
             - ./xinetd:/etc/xinetd.d/xinetd:ro
@@ -15,7 +15,6 @@ services:
         pids_limit: 1024
         cpus: 0.5
         restart: unless-stopped
-        
 networks:
     default:
         external:
